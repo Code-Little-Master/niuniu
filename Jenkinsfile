@@ -6,6 +6,8 @@ pipeline {
         IMAGETAG      = '1.0.0'         // 镜像标签
         APPPORT       = '8089'          // 应用占用的端口
         APPDIR        = '/opt/app'      // 应用工作的目录
+		DOTNET_CLI_HOME = '/tmp/DOTNET_CLI_HOME'
+
     }
 
     agent {
