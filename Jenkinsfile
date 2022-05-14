@@ -42,7 +42,7 @@ pipeline {
 
         // 部署应用，
         // 这里选择将应用打包为 docker 镜像
-        stage('部署应用') { 
+        stage('打包镜像') { 
 
             steps {
                 sh  'touch Dockerfile'
