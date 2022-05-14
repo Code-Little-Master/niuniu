@@ -20,21 +20,21 @@ pipeline {
 
         
         // 开始构建，debug、test，在此过程中还原程序nuget依赖、输出 debug、单元测试等
-        stage('Build') { 
+        stage('开始构建') { 
             steps {
                 sh 'dotnet restore'
             }
         }
 
         // 执行单元测试
-        stage('Test') { 
+        stage('执行单元测试') { 
             steps {
                 sh 'dotnet test  --logger "console;verbosity=detailed"  --blame  --logger trx'
             }
         }
         
         // 正式发布
-        stage('Publish') { 
+        stage('正式发布') { 
             steps {
                 sh 'dotnet publish src/WebDemo -c Release'
             }
@@ -42,7 +42,7 @@ pipeline {
 
         // 部署应用，
         // 这里选择将应用打包为 docker 镜像
-        stage('Deploy') { 
+        stage('部署应用') { 
 
             steps {
                 sh  'touch Dockerfile'
